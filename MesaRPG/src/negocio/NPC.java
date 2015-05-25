@@ -26,8 +26,6 @@ public class NPC extends Criatura{
 
     public void setAliado(boolean Aliado) {
         this.Aliado = Aliado;
-    }
-    
-    
+    }   
     
 }
