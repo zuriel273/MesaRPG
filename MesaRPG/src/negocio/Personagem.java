@@ -6,18 +6,20 @@
 
 package negocio;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Arlindo
  */
-public class Personagem {
+public class Personagem extends Criatura {
     private String nome;
-    private Criatura criatura;
 
-    public Personagem(String nome, Criatura criatura) {
+    public Personagem(String nome, ArrayList<Item> itens, ArrayList<Atributo> atributos, Raça raça, int level, int xp) {
+        super(itens, atributos, raça, level, xp);
         this.nome = nome;
-        this.criatura = criatura;
     }
+    
 
     public String getNome() {
         return nome;
@@ -27,13 +29,6 @@ public class Personagem {
         this.nome = nome;
     }
 
-    public Criatura getCriatura() {
-        return criatura;
-    }
-
-    public void setCriatura(Criatura criatura) {
-        this.criatura = criatura;
-    }
-    
+  
     
 }
