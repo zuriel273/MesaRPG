@@ -13,12 +13,16 @@ package mesa;
 public abstract class ModuloBatalha {
    
     protected GrupoCriatura grupo;
+    protected TesteCommand iniciativa;
+    
+    final void decorreBatalha(){
+        for(CriaturaIterator it = grupo.ordenarGrupo(iniciativa); !it.fimDeBatalha(); it.proximo()){
+            emBatalha(it);
+        }
+    }
    
-   final void decorreBatalha(){
-   
-   }
-   
-    abstract void emBatalha();
+    abstract void emBatalha(CriaturaIterator it);
+    
     abstract boolean acao();
     abstract boolean encerraBatalha();
     abstract boolean reacao();

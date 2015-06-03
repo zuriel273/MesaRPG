@@ -11,10 +11,11 @@ package mesa;
  * @author Arlindo
  */
 public interface CriaturaIterator {
+    
     public Criatura primeiro();
-    public boolean fimDeBatalha();
     public Criatura proximo();
     public Criatura criaturaAtual();
-    public int turno();
     
+    public boolean fimDeBatalha();
+    public int turno();
 }
