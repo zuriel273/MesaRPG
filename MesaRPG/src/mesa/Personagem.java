@@ -15,12 +15,11 @@ import java.util.ArrayList;
 public class Personagem extends Criatura {
     private String nome;
 
-    public Personagem(String nome, ArrayList<Item> itens, ArrayList<Atributo> atributos, Raca raça, int level, int xp) {
-        super(itens, atributos, raça, level, xp);
+    public Personagem(String nome, ArrayList<Item> itens, ArrayList<Atributo> atributos, Raca raca, int level, int xp) {
+        super(itens, atributos, raca, level, xp);
         this.nome = nome;
     }
     
-
     public String getNome() {
         return nome;
     }
@@ -29,6 +28,4 @@ public class Personagem extends Criatura {
         this.nome = nome;
     }
 
-  
-    
 }
