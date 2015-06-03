@@ -15,8 +15,8 @@ import java.util.ArrayList;
 public class NPC extends Criatura{
     private boolean Aliado;
 
-    public NPC(boolean Aliado, ArrayList<Item> itens, ArrayList<Atributo> atributos, Raca raça, int level, int xp) {
-        super(itens, atributos, raça, level, xp);
+    public NPC(boolean Aliado, ArrayList<Item> itens, ArrayList<Atributo> atributos, Raca raca, int level, int xp) {
+        super(itens, atributos, raca, level, xp);
         this.Aliado = Aliado;
     }
 
