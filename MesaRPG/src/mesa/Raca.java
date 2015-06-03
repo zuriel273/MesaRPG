@@ -12,12 +12,12 @@ import java.util.ArrayList;
  *
  * @author Arlindo
  */
-public class Raça {
+public class Raca {
     
     private String descricao;
     private ArrayList<Habilidade> habilidades;
 
-    public Raça(String descricao, ArrayList<Habilidade> habilidades) {
+    public Raca(String descricao, ArrayList<Habilidade> habilidades) {
         this.descricao = descricao;
         this.habilidades = habilidades;
     }

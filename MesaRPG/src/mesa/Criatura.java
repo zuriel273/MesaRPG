@@ -15,13 +15,20 @@ import java.util.ArrayList;
 public class Criatura {
     private ArrayList<Item> itens;
     private ArrayList<Atributo> atributos;
-    private Raça raça;
+    private Raca raca;
     private int level, xp;
 
-    public Criatura(ArrayList<Item> itens, ArrayList<Atributo> atributos, Raça raça, int level, int xp) {
+    public Criatura(ArrayList<Item> itens, ArrayList<Atributo> atributos, Raca raca, int level, int xp) {
         this.itens = itens;
         this.atributos = atributos;
-        this.raça = raça;
+        this.raca = raca;
+        this.level = level;
+        this.xp = xp;
+    }
+    
+     public Criatura(ArrayList<Atributo> atributos, Raca raca, int level, int xp) {
+        this.atributos = atributos;
+        this.raca = raca;
         this.level = level;
         this.xp = xp;
     }
@@ -42,12 +49,12 @@ public class Criatura {
         this.atributos = atributos;
     }
 
-    public Raça getRaça() {
-        return raça;
+    public Raca getRaca() {
+        return raca;
     }
 
-    public void setRaça(Raça raça) {
-        this.raça = raça;
+    public void setRaca(Raca raca) {
+        this.raca = raca;
     }
 
     public int getLevel() {
@@ -68,6 +75,12 @@ public class Criatura {
     
     public boolean morto(){
         return false;
+    }
+
+    @Override
+    public String toString() {
+//        return "Criatura{" + "itens=" + itens + ", atributos=" + atributos + ", raca=" + raca + ", level=" + level + ", xp=" + xp + '}';
+        return "Criatura{level=" + level + ", xp=" + xp + "}";
     }
     
 }
