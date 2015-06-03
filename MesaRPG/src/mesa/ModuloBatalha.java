@@ -19,13 +19,13 @@ public abstract class ModuloBatalha {
         for(CriaturaIterator it = grupo.ordenarGrupo(iniciativa); !it.fimDeBatalha(); it.proximo()){
             emBatalha(it);
         }
+        
+        encerraBatalha(false);
     }
    
     abstract void emBatalha(CriaturaIterator it);
     
-    abstract boolean acao();
-    abstract boolean encerraBatalha();
-    abstract boolean reacao();
-        
-    
+    abstract boolean acao(Criatura craitura, TesteCommand test);
+    abstract boolean reacao(Criatura craitura, TesteCommand test);
+    abstract boolean encerraBatalha(boolean forced);   
 }

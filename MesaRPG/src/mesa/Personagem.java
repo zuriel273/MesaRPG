@@ -20,7 +20,6 @@ public class Personagem extends Criatura {
         this.nome = nome;
     }
     
-
     public String getNome() {
         return nome;
     }
@@ -29,6 +28,4 @@ public class Personagem extends Criatura {
         this.nome = nome;
     }
 
-  
-    
 }
