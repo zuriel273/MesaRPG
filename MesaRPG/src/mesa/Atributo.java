@@ -45,5 +45,10 @@ public class Atributo {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
+
+    @Override
+    public String toString() {
+        return "Atributo{" + "valor=" + valor + ", nome=" + nome + ", descricao=" + descricao + '}';
+    }
     
 }
