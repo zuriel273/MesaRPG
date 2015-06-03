@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class Personagem extends Criatura {
     private String nome;
 
-    public Personagem(String nome, ArrayList<Item> itens, ArrayList<Atributo> atributos, Raça raça, int level, int xp) {
+    public Personagem(String nome, ArrayList<Item> itens, ArrayList<Atributo> atributos, Raca raça, int level, int xp) {
         super(itens, atributos, raça, level, xp);
         this.nome = nome;
     }
