@@ -14,14 +14,25 @@ import java.util.ArrayList;
  */
 public class Raca {
     
+    private String nome;
     private String descricao;
     private ArrayList<Habilidade> habilidades;
 
-    public Raca(String descricao, ArrayList<Habilidade> habilidades) {
+   
+    public Raca(String nome, String descricao, ArrayList<Habilidade> habilidades) {
+        this.nome = nome;
         this.descricao = descricao;
         this.habilidades = habilidades;
     }
 
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }    
+    
     public String getDescricao() {
         return descricao;
     }
