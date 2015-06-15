@@ -13,5 +13,6 @@ package mesa;
 public interface TesteCommand {
     
     public boolean teste(Criatura ativa, Criatura passiva);
+    public int testeAsInt(Criatura ativa, Criatura passiva);
     
 }
