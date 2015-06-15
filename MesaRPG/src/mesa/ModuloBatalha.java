@@ -16,6 +16,11 @@ public abstract class ModuloBatalha {
     protected TesteCommand iniciativa;
     
     final void decorreBatalha(){
+        if(iniciativa == null){
+            System.out.println("iniciativa não pode ser nula");
+            return;
+        }
+            
         for(CriaturaIterator it = grupo.ordenarGrupo(iniciativa); !it.fimDeBatalha(); it.proximo()){
             emBatalha(it);
         }
@@ -25,7 +30,17 @@ public abstract class ModuloBatalha {
    
     abstract void emBatalha(CriaturaIterator it);
     
+    /*
     abstract boolean acao(Criatura craitura, TesteCommand test);
     abstract boolean reacao(Criatura craitura, TesteCommand test);
-    abstract boolean encerraBatalha(boolean forced);   
+    */
+    
+    abstract boolean encerraBatalha(boolean forced);
+    
+    /* Getters & Setters */
+    
+    final public void setIniciativa(TesteCommand teste){
+        iniciativa = teste;
+    }
+    
 }

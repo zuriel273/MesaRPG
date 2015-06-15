@@ -14,13 +14,12 @@ import java.util.Arrays;
 
 public class Dado {
     
-    public static Dado self;
+    public static Dado self = null;
     
-    protected Dado(){
-        self = this;
-    }
+    private Dado(){}
     
     public Dado getInst(){
+        if(self == null) self = new Dado();
         return self;
     }
     
