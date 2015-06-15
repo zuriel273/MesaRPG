@@ -64,4 +64,16 @@ public class MesaRPG {
         group.addAll(currentNPCs);
         return group;
     }  
+
+    public void listJogadores(){
+        jogadores.stream().forEach((jogador) -> {
+            System.out.println(jogador);
+        });
+    }
+    
+    public void listNpcs(){
+        currentNPCs.stream().forEach((npc) -> {
+            System.out.println(npc);
+        });
+    }
 }

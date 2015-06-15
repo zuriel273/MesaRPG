@@ -11,10 +11,12 @@ package mesa;
  * @author Arlindo
  */
 public class Jogador {
+    private String name;
     private Personagem personagem;
     
     //Preenchendo ficha
-    public Jogador(Personagem personagem) {
+    public Jogador(String name, Personagem personagem) {
+        this.name = name;
         this.personagem = personagem;
     }
 
@@ -26,5 +28,9 @@ public class Jogador {
         this.personagem = personagem;
     }
     
-    
+    @Override
+    public String toString(){
+        return "name: " + name + "\n" +
+               "personagem: " + personagem.getNome() + "\n";
+    }
 }
