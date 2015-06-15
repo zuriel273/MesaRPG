@@ -31,7 +31,7 @@ public class CriaturaTest extends TestCase{
         Habilidade habilidade = new Habilidade("Força de Touro", "Petrus", 3, atributos);
         ArrayList<Habilidade> habilidades = new ArrayList<>();
         habilidades.add(habilidade);
-        Raca raca = new Raca("Petruslianos", habilidades);
+        Raca raca = new Raca("Petruslianos","Petruslianos", habilidades);
                     
         ArrayList<Item> itens = null;
         Criatura instance = new Criatura(atributos, raca, 1, 10);
