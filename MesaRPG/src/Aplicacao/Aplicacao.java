@@ -20,6 +20,7 @@ public class Aplicacao {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        MesaRPG mesa = new MesaRPG();        
         
         ArrayList<Raca> racas = new ArrayList<>();
         ArrayList<Habilidade> habilidadeGue = new ArrayList<>();
@@ -27,6 +28,25 @@ public class Aplicacao {
         ArrayList<Habilidade> habilidadeMag = new ArrayList<>();
         ArrayList<Atributo> atributosMag = new ArrayList<>();
         
+        
+                
+        Atributo forca, magia, defesa, vida;
+        
+        forca = new Atributo(1, "Força", "Força do Jogador");
+        magia = new Atributo(1,"Magia", "Magia do Jogador");
+        defesa = new Atributo(1, "Defesa", "Defesa do Jogador");
+        vida = new Atributo(20, "Vida", "Vida do Jogador");
+        
+        atributosGue.add(vida);
+        atributosGue.add(magia);
+        atributosGue.add(defesa);
+        atributosGue.add(forca);
+        
+        atributosMag.add(vida);
+        atributosMag.add(magia);
+        atributosMag.add(defesa);
+        atributosMag.add(forca);
+                
         Habilidade forcaDeUrso = new Habilidade("Força de Urso", "O Jogador fica forte como um urso", 2, atributosGue);
         Habilidade livroDeMagia = new Habilidade("Livro de Magia", "O Jogador ganha mais Habilidade no uso das Magias", 3, atributosMag);
         
@@ -35,6 +55,8 @@ public class Aplicacao {
         
         Raca guerreiro = new Raca("Guerreiro","Defesa e ataque equilibrados, mas não utiliza magia",habilidadeGue);
         Raca Mago = new Raca("Mago","Pouca Defesa e boa Magia",habilidadeMag);
+        
+        
         
         
         

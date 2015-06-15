@@ -19,6 +19,8 @@ public class MesaRPG {
     public ArrayList<Jogador> jogadores;
     public ArrayList<Criatura> currentNPCs;
     public ArrayList<Criatura> NPCs;
+    public ArrayList<Raca> racas;
+   
             
     public void joinJogador(Jogador jogador){
         jogadores.add(jogador);
