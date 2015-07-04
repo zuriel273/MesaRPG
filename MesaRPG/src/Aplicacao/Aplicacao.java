@@ -24,11 +24,13 @@ public class Aplicacao {
     public static void main(String[] args) throws IOException {
         // TODO code application logic here
         MesaRPG mesa = new MesaRPG();        
-        String entrada;
+        String entrada,aux1,aux2,aux3,aux4;
+        int auxi;
         BufferedReader obj = new BufferedReader(new InputStreamReader (System.in)); 
         int sair = 0;
         int opcao;
         //ArrayList<Raca> racas = new ArrayList<>();
+         ArrayList<Atributo> atributos = new ArrayList<>();
         ArrayList<Habilidade> habilidade = new ArrayList<>();
         ArrayList<Atributo> atributosGue = new ArrayList<>();
         ArrayList<Habilidade> habilidadeMag = new ArrayList<>();
@@ -67,6 +69,57 @@ public class Aplicacao {
                     String descricao = obj.readLine();                    
                     mesa.joinRaca(new Raca(nome,descricao,habilidade));
                     System.out.println("Raca " + nome + " criada com SUCESSO!");
+                    break;
+                case 3:                    
+                    System.out.println("Digite o Nome do Atributo: ");
+                    nome = obj.readLine();
+                    System.out.println("Digite a Descrição do Atributo: ");
+                    descricao = obj.readLine(); 
+                    System.out.println("Digite o Valor do Atributo: ");
+                    entrada = obj.readLine();
+                    auxi = Integer.parseInt(entrada);
+                    mesa.joinAtributo(new Atributo(auxi, nome, descricao));
+                    System.out.println("Atributo " + nome + " criado com SUCESSO!");
+                    break;
+                case 4:
+                    System.out.println("Digite o Nome da Habilidade: ");
+                    nome = obj.readLine();
+                    System.out.println("Digite a Descrição da Habilidade: ");
+                    descricao = obj.readLine(); 
+                    System.out.println("Digite o Valor modificador da Habilidade: ");
+                    entrada = obj.readLine();
+                    auxi = Integer.parseInt(entrada);
+                    atributos = new ArrayList<>();
+                    
+                    while (sair == 0){                         
+                         int i = 0;                        
+                         for(i = 0; i < mesa.getAtributos().size();i++){
+                              System.out.println( i + " - Nome:" + mesa.getAtributos().get(i).getNome() + " Valor:" + mesa.getAtributos().get(i).getValor());
+                         }                      
+                                                  
+                         System.out.println("-----------------------------------------------------------");
+                         System.out.println("Atributos já selecionados: ");
+                         for(i = 0; i < atributos.size(); i++){
+                             System.out.printf(" ");
+                             System.out.printf(atributos.get(i).getNome());
+                             System.out.println(" "); 
+                         }
+                         System.out.println("-----------------------------------------------------------");                         
+                         System.out.println("Digite o Atributo desejado ou 99 para voltar ao menu anterior: ");
+                         entrada = obj.readLine();
+                         opcao = Integer.parseInt(entrada);
+                         
+                         if (opcao == 99){
+                             sair = 1;
+                         }                         
+                         if(opcao < mesa.getAtributos().size()){
+                            atributos.add(mesa.getAtributos().get(i));
+                         }
+
+                    }
+                    
+                    mesa.joinHabilidades(new Habilidade(nome, descricao, auxi, atributos));
+                    sair = 0;
                     break;
                 case 11:
                     sair = 1;

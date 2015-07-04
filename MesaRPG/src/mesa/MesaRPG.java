@@ -35,8 +35,24 @@ public class MesaRPG {
 
     public void setTitulo(String titulo) {
         this.titulo = titulo;
-    }   
-    
+    }
+
+    public ArrayList<Habilidade> getHabilidades() {
+        return habilidades;
+    }
+
+    public void setHabilidades(ArrayList<Habilidade> habilidades) {
+        this.habilidades = habilidades;
+    }
+
+    public ArrayList<Atributo> getAtributos() {
+        return atributos;
+    }
+
+    public void setAtributos(ArrayList<Atributo> atributos) {
+        this.atributos = atributos;
+    }
+       
     public void removeJogador(Jogador jogador){
         if(!jogadores.remove(jogador)){
             System.out.println("Warning: Jogador não existe na lista de jogadores");
