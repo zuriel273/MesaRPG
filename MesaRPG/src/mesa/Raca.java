@@ -49,6 +49,16 @@ public class Raca {
         this.habilidades = habilidades;
     }
     
+    public void joinHabilidades(Habilidade habilidade){
+        habilidades.add(habilidade);
+    }
+    
+    public void removeHabilidade(Habilidade habilidade){
+        if(!habilidades.remove(habilidade)){
+            System.out.println("Warning: Habilidade não existe na lista de habilidades");
+        }
+    }
+    
     
     
 }

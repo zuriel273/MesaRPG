@@ -16,15 +16,26 @@ public class MesaRPG {
     
     public static final boolean DEBUG_MODE = true; 
     
-    public ArrayList<Jogador> jogadores;
-    public ArrayList<Criatura> currentNPCs;
-    public ArrayList<Criatura> NPCs;
-    public ArrayList<Raca> racas;
+    public String titulo;
+    public ArrayList<Jogador> jogadores = new ArrayList<>();
+    public ArrayList<Criatura> currentNPCs = new ArrayList<>();
+    public ArrayList<Criatura> NPCs = new ArrayList<>();
+    public ArrayList<Raca> racas = new ArrayList<>();
+    public ArrayList<Habilidade> habilidades = new ArrayList<>();
+    public ArrayList<Atributo> atributos = new ArrayList<>();
    
             
     public void joinJogador(Jogador jogador){
         jogadores.add(jogador);
     }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }   
     
     public void removeJogador(Jogador jogador){
         if(!jogadores.remove(jogador)){
@@ -39,6 +50,26 @@ public class MesaRPG {
     public void removeRaca(Raca raca){
         if(!racas.remove(raca)){
             System.out.println("Warning: Raça não existe na lista de raças");
+        }
+    }
+    
+    public void joinHabilidades(Habilidade habilidade){
+        habilidades.add(habilidade);
+    }
+    
+    public void removeHabilidade(Habilidade habilidade){
+        if(!habilidades.remove(habilidade)){
+            System.out.println("Warning: Habilidade não existe na lista de habilidades");
+        }
+    }
+    
+    public void joinAtributo(Atributo atributo){
+        atributos.add(atributo);
+    }
+    
+    public void removeAtributo(Atributo atributo){
+        if(!atributos.remove(atributo)){
+            System.out.println("Warning: Atributo não existe na lista de atributos");
         }
     }
     

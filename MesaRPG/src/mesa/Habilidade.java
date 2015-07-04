@@ -58,6 +58,15 @@ public class Habilidade {
         this.atributos = atributos;
     }
     
+    public void joinAtributo(Atributo atributo){
+        atributos.add(atributo);
+    }
+    
+    public void removeAtributo(Atributo atributo){
+        if(!atributos.remove(atributo)){
+            System.out.println("Warning: Atributo não existe na lista de atributos");
+        }
+    }
     
     
     

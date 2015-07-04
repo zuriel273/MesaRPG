@@ -21,11 +21,24 @@ public class Aplicacao {
     public static void main(String[] args) {
         // TODO code application logic here
         MesaRPG mesa = new MesaRPG();        
+        int sair = 0;
         //ArrayList<Raca> racas = new ArrayList<>();
         ArrayList<Habilidade> habilidadeGue = new ArrayList<>();
         ArrayList<Atributo> atributosGue = new ArrayList<>();
         ArrayList<Habilidade> habilidadeMag = new ArrayList<>();
         ArrayList<Atributo> atributosMag = new ArrayList<>();
+        
+        
+        
+        
+        while (sair == 0){
+        //APLICAÇÃO
+        
+        
+        
+        }
+        
+        
                        
         Atributo forca, magia, defesa, vida;
         
