@@ -32,6 +32,16 @@ public class MesaRPG {
         }
     }
     
+     public void joinRaca(Raca raca){
+        racas.add(raca);
+    }
+    
+    public void removeRaca(Raca raca){
+        if(!racas.remove(raca)){
+            System.out.println("Warning: Raça não existe na lista de raças");
+        }
+    }
+    
     public void joinNPC(NPC npc){
         currentNPCs.add(npc);
     }

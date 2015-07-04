@@ -18,7 +18,7 @@ public class Dado {
     
     private Dado(){}
     
-    public Dado getInst(){
+    public static Dado getInst(){
         if(self == null) self = new Dado();
         return self;
     }

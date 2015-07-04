@@ -21,15 +21,12 @@ public class Aplicacao {
     public static void main(String[] args) {
         // TODO code application logic here
         MesaRPG mesa = new MesaRPG();        
-        
-        ArrayList<Raca> racas = new ArrayList<>();
+        //ArrayList<Raca> racas = new ArrayList<>();
         ArrayList<Habilidade> habilidadeGue = new ArrayList<>();
         ArrayList<Atributo> atributosGue = new ArrayList<>();
         ArrayList<Habilidade> habilidadeMag = new ArrayList<>();
         ArrayList<Atributo> atributosMag = new ArrayList<>();
-        
-        
-                
+                       
         Atributo forca, magia, defesa, vida;
         
         forca = new Atributo(1, "Força", "Força do Jogador");
@@ -53,8 +50,13 @@ public class Aplicacao {
         habilidadeGue.add(forcaDeUrso);
         habilidadeMag.add(livroDeMagia);
         
-        Raca guerreiro = new Raca("Guerreiro","Defesa e ataque equilibrados, mas não utiliza magia",habilidadeGue);
+        Raca Guerreiro = new Raca("Guerreiro","Defesa e ataque equilibrados, mas não utiliza magia",habilidadeGue);
         Raca Mago = new Raca("Mago","Pouca Defesa e boa Magia",habilidadeMag);
+        
+        mesa.joinRaca(Mago);
+        mesa.joinRaca(Guerreiro);
+        
+        
         
         
         
