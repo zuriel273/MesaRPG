@@ -34,6 +34,7 @@ public class Aplicacao {
         ArrayList<Habilidade> habilidade = new ArrayList<>();
         ArrayList<Item> itens = new ArrayList<>();
         Raca r = new Raca("","" ,habilidade);
+        Personagem p = new Personagem("", null, null, null, 1, 1);
         boolean b;
              
         mesa.setTitulo("SEM TITULO");
@@ -107,7 +108,7 @@ public class Aplicacao {
                              sair = 1;
                          }                         
                          if(opcao < mesa.getAtributos().size()){
-                            atributos.add(mesa.getAtributos().get(i));
+                            atributos.add(mesa.getAtributos().get(opcao));
                          }
                     }                    
                     mesa.joinHabilidades(new Habilidade(nome, descricao, auxi, atributos));
@@ -157,8 +158,7 @@ public class Aplicacao {
             System.out.println("1 - ADICIONAR JOGADOR ");
             System.out.println("2 - ADICIONAR PERSONAGEM");
             System.out.println("3 - ADICIONAR NPC");
-            System.out.println("4 - ADICIONAR ITEM");
-                     
+            System.out.println("4 - ADICIONAR ITEM");                     
             System.out.println("11 - SAIR ");
             System.out.println("------------------------------------------------------------------------------");
             System.out.println("Digite a opção desejada: ");
@@ -166,9 +166,33 @@ public class Aplicacao {
             opcao = Integer.parseInt(entrada);
             switch(opcao){
                 case 1:
-                    System.out.println("Digite o Título do Jogo: ");        
-                    entrada = obj.readLine();
-                    mesa.setTitulo(entrada);
+                    System.out.println("Digite o Nome do Jogador: ");
+                    nome = obj.readLine();
+                    
+                    while (sair == 0){                         
+                        int i = 0;                        
+                        for(i = 0; i < mesa.getPersonagens().size();i++){
+                             System.out.println( i + " - Nome:" + mesa.getPersonagens().get(i).getNome() + " Raça:" + mesa.getPersonagens().get(i).getRaca().getNome() + " Level:" + mesa.getPersonagens().get(i).getLevel());
+                        }                                                     
+                        System.out.println("-----------------------------------------------------------");
+                        System.out.println("Personagem selecionado: ");
+                        System.out.printf(" ");
+                        System.out.printf(p.getNome());
+                        System.out.println(" "); 
+                        System.out.println("-----------------------------------------------------------");                         
+                        System.out.println("Digite o Personagem desejado ou 99 para voltar ao menu anterior: ");
+                        entrada = obj.readLine();
+                        opcao = Integer.parseInt(entrada);                         
+                        if (opcao == 99){
+                            sair = 1;
+                        }                         
+                        if(opcao < mesa.getPersonagens().size()){
+                           p = mesa.getPersonagens().get(opcao); 
+                           mesa.joinJogador(new Jogador(nome, p));
+                        }
+                        
+                    }
+                    sair = 0;
                     break;
                 case 2:
                     System.out.println("Digite o Nome do Personagem: ");
@@ -200,7 +224,7 @@ public class Aplicacao {
                              sair = 1;
                          }                         
                          if(opcao < mesa.getAtributos().size()){
-                            atributos.add(mesa.getAtributos().get(i)); 
+                            atributos.add(mesa.getAtributos().get(opcao)); 
                          }
                     }   
                     sair = 0;
@@ -215,14 +239,14 @@ public class Aplicacao {
                         System.out.printf(r.getNome());
                         System.out.println(" "); 
                         System.out.println("-----------------------------------------------------------");                         
-                        System.out.println("Digite o Atributo desejado ou 99 para voltar ao menu anterior: ");
+                        System.out.println("Digite a Raça desejada ou 99 para voltar ao menu anterior: ");
                         entrada = obj.readLine();
                         opcao = Integer.parseInt(entrada);                         
                         if (opcao == 99){
                             sair = 1;
                         }                         
                         if(opcao < mesa.getRacas().size()){
-                           r = mesa.getRacas().get(i); 
+                           r = mesa.getRacas().get(opcao); 
                         }
                     }
                     // CONTINUAR
@@ -266,7 +290,7 @@ public class Aplicacao {
                              sair = 1;
                          }                         
                          if(opcao < mesa.getAtributos().size()){
-                            atributos.add(mesa.getAtributos().get(i)); 
+                            atributos.add(mesa.getAtributos().get(opcao)); 
                          }
                     }   
                     sair = 0;
@@ -291,13 +315,10 @@ public class Aplicacao {
                             sair = 1;
                         }                         
                         if(opcao < mesa.getRacas().size()){
-                           r = mesa.getRacas().get(i); 
+                           r = mesa.getRacas().get(opcao); 
                         }
-                    }
-                    // CONTINUAR
-                    mesa.joinNPC(new NPC(b, itens, atributos, r, auxii, auxi));
-                   // mesa.joinPersonagem(new Personagem(nome, itens, atributos, r, auxii, auxi));
-                   
+                    }                    
+                    mesa.joinNPC(new NPC(b, itens, atributos, r, auxii, auxi));                                      
                     sair = 0;
                     break;
                 case 11:

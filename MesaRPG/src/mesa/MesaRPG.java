@@ -47,6 +47,15 @@ public class MesaRPG {
         }
     }
 
+    public ArrayList<Personagem> getPersonagens() {
+        return personagens;
+    }
+
+    public void setPersonagens(ArrayList<Personagem> personagens) {
+        this.personagens = personagens;
+    }
+    
+    
     public String getTitulo() {
         return titulo;
     }
