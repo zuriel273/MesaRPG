@@ -158,7 +158,7 @@ public class Aplicacao {
             System.out.println("1 - ADICIONAR JOGADOR ");
             System.out.println("2 - ADICIONAR PERSONAGEM");
             System.out.println("3 - ADICIONAR NPC");
-            System.out.println("4 - ADICIONAR ITEM");                     
+                            
             System.out.println("11 - SAIR ");
             System.out.println("------------------------------------------------------------------------------");
             System.out.println("Digite a opção desejada: ");
@@ -203,7 +203,8 @@ public class Aplicacao {
                     System.out.println("Digite o Level do Personagem: ");
                     entrada = obj.readLine();
                     auxii = Integer.parseInt(entrada);
-                    atributos = new ArrayList<>();                    
+                    atributos = new ArrayList<>();    
+                    r = new Raca("","" ,habilidade);
                     while (sair == 0){                         
                          int i = 0;                        
                          for(i = 0; i < mesa.getAtributos().size();i++){
@@ -249,7 +250,7 @@ public class Aplicacao {
                            r = mesa.getRacas().get(opcao); 
                         }
                     }
-                    // CONTINUAR
+                   
                     mesa.joinPersonagem(new Personagem(nome, itens, atributos, r, auxii, auxi));
                    
                     sair = 0;
@@ -269,7 +270,8 @@ public class Aplicacao {
                     System.out.println("Digite o Level do NPC: ");
                     entrada = obj.readLine();
                     auxii = Integer.parseInt(entrada);
-                    atributos = new ArrayList<>();                    
+                    atributos = new ArrayList<>();    
+                    r = new Raca("","" ,habilidade);
                     while (sair == 0){                         
                          int i = 0;                        
                          for(i = 0; i < mesa.getAtributos().size();i++){
