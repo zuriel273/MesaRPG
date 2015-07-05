@@ -83,4 +83,25 @@ public class Criatura {
         return "Criatura{level=" + level + ", xp=" + xp + "}";
     }
     
+    public void joinAtributo(Atributo atributo){
+        atributos.add(atributo);
+    }
+    
+    public void removeAtributo(Atributo atributo){
+        if(!atributos.remove(atributo)){
+            System.out.println("Warning: Atributo não existe na lista de atributos");
+        }
+    }
+    
+    public void joinItem(Item item){
+        itens.add(item);
+    }
+    
+    public void removeItem(Item item){
+        if(!itens.remove(item)){
+            System.out.println("Warning: Item não existe na lista de itens");
+        }
+    }
+    
+    
 }

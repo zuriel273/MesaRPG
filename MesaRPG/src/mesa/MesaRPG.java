@@ -23,10 +23,17 @@ public class MesaRPG {
     public ArrayList<Raca> racas = new ArrayList<>();
     public ArrayList<Habilidade> habilidades = new ArrayList<>();
     public ArrayList<Atributo> atributos = new ArrayList<>();
+    public ArrayList<Item> itens = new ArrayList<>();
    
             
     public void joinJogador(Jogador jogador){
         jogadores.add(jogador);
+    }
+    
+    public void removeJogador(Jogador jogador){
+        if(!jogadores.remove(jogador)){
+            System.out.println("Warning: Jogador não existe na lista de jogadores");
+        }
     }
 
     public String getTitulo() {
@@ -52,13 +59,16 @@ public class MesaRPG {
     public void setAtributos(ArrayList<Atributo> atributos) {
         this.atributos = atributos;
     }
-       
-    public void removeJogador(Jogador jogador){
-        if(!jogadores.remove(jogador)){
-            System.out.println("Warning: Jogador não existe na lista de jogadores");
-        }
+
+    public ArrayList<Raca> getRacas() {
+        return racas;
     }
-    
+
+    public void setRacas(ArrayList<Raca> racas) {
+        this.racas = racas;
+    }
+       
+        
      public void joinRaca(Raca raca){
         racas.add(raca);
     }
@@ -66,6 +76,16 @@ public class MesaRPG {
     public void removeRaca(Raca raca){
         if(!racas.remove(raca)){
             System.out.println("Warning: Raça não existe na lista de raças");
+        }
+    }
+    
+    public void joinItem(Item item){
+        itens.add(item);
+    }
+    
+    public void removeItem(Item item){
+        if(!itens.remove(item)){
+            System.out.println("Warning: Item não existe na lista de itens");
         }
     }
     
