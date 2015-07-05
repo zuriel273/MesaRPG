@@ -25,7 +25,7 @@ public class Aplicacao {
         // TODO code application logic here
         MesaRPG mesa = new MesaRPG();        
         String entrada,aux1,aux2,descricao,nome;
-        int auxi, auxii;
+        int auxi, auxii, auxiii;
         BufferedReader obj = new BufferedReader(new InputStreamReader (System.in)); 
         int sair = 0;
         int opcao;
@@ -33,6 +33,8 @@ public class Aplicacao {
         ArrayList<Atributo> atributos = new ArrayList<>();
         ArrayList<Habilidade> habilidade = new ArrayList<>();
         ArrayList<Item> itens = new ArrayList<>();
+        Raca r = new Raca("","" ,habilidade);
+        boolean b;
              
         mesa.setTitulo("SEM TITULO");
        
@@ -201,8 +203,101 @@ public class Aplicacao {
                             atributos.add(mesa.getAtributos().get(i)); 
                          }
                     }   
+                    sair = 0;
+                    while (sair == 0){                         
+                        int i = 0;                        
+                        for(i = 0; i < mesa.getRacas().size();i++){
+                             System.out.println( i + " - Nome:" + mesa.getRacas().get(i).getNome() + " Valor:" + mesa.getRacas().get(i).getDescricao());
+                        }                                                     
+                        System.out.println("-----------------------------------------------------------");
+                        System.out.println("Raça selecionada: ");
+                        System.out.printf(" ");
+                        System.out.printf(r.getNome());
+                        System.out.println(" "); 
+                        System.out.println("-----------------------------------------------------------");                         
+                        System.out.println("Digite o Atributo desejado ou 99 para voltar ao menu anterior: ");
+                        entrada = obj.readLine();
+                        opcao = Integer.parseInt(entrada);                         
+                        if (opcao == 99){
+                            sair = 1;
+                        }                         
+                        if(opcao < mesa.getRacas().size()){
+                           r = mesa.getRacas().get(i); 
+                        }
+                    }
                     // CONTINUAR
-                    //mesa.joinHabilidades(new Habilidade(nome, descricao, auxi, atributos));
+                    mesa.joinPersonagem(new Personagem(nome, itens, atributos, r, auxii, auxi));
+                   
+                    sair = 0;
+                    break;
+                case 3:
+                    System.out.println("NPC ALIADO( DIGITE 1 ) OU INIMIGO ( DIGITE 2 ): ");
+                    entrada = obj.readLine();             
+                    auxiii = Integer.parseInt(entrada);
+                    if(auxiii == 1){
+                        b = true;
+                    }else{
+                        b = false;
+                    }
+                    System.out.println("Digite o Valor do XP do NPC: ");
+                    entrada = obj.readLine();
+                    auxi = Integer.parseInt(entrada);
+                    System.out.println("Digite o Level do NPC: ");
+                    entrada = obj.readLine();
+                    auxii = Integer.parseInt(entrada);
+                    atributos = new ArrayList<>();                    
+                    while (sair == 0){                         
+                         int i = 0;                        
+                         for(i = 0; i < mesa.getAtributos().size();i++){
+                              System.out.println( i + " - Nome:" + mesa.getAtributos().get(i).getNome() + " Valor:" + mesa.getAtributos().get(i).getValor());
+                         }                                                     
+                         System.out.println("-----------------------------------------------------------");
+                         System.out.println("Atributos já selecionados: ");
+                         for(i = 0; i < atributos.size(); i++){
+                             System.out.printf(" ");
+                             System.out.printf(atributos.get(i).getNome());
+                             System.out.println(" "); 
+                         }
+                         System.out.println("-----------------------------------------------------------");                         
+                         System.out.println("Digite o Atributo desejado ou 99 para voltar ao menu anterior: ");
+                         entrada = obj.readLine();
+                         opcao = Integer.parseInt(entrada);                         
+                         if (opcao == 99){
+                             sair = 1;
+                         }                         
+                         if(opcao < mesa.getAtributos().size()){
+                            atributos.add(mesa.getAtributos().get(i)); 
+                         }
+                    }   
+                    sair = 0;
+                    while (sair == 0){ 
+                         System.out.println("-----------------------------------------------------------");
+                         System.out.println("SELECIONE UMA RAÇA");
+                         System.out.println("-----------------------------------------------------------");
+                        int i = 0;                        
+                        for(i = 0; i < mesa.getRacas().size();i++){
+                             System.out.println( i + " - Nome:" + mesa.getRacas().get(i).getNome() + " Valor:" + mesa.getRacas().get(i).getDescricao());
+                        }                                                     
+                        System.out.println("-----------------------------------------------------------");
+                        System.out.println("Raça selecionada: ");
+                        System.out.printf(" ");
+                        System.out.printf(r.getNome());
+                        System.out.println(" "); 
+                        System.out.println("-----------------------------------------------------------");                         
+                        System.out.println("Digite o Atributo desejado ou 99 para voltar ao menu anterior: ");
+                        entrada = obj.readLine();
+                        opcao = Integer.parseInt(entrada);                         
+                        if (opcao == 99){
+                            sair = 1;
+                        }                         
+                        if(opcao < mesa.getRacas().size()){
+                           r = mesa.getRacas().get(i); 
+                        }
+                    }
+                    // CONTINUAR
+                    mesa.joinNPC(new NPC(b, itens, atributos, r, auxii, auxi));
+                   // mesa.joinPersonagem(new Personagem(nome, itens, atributos, r, auxii, auxi));
+                   
                     sair = 0;
                     break;
                 case 11:

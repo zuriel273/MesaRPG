@@ -18,6 +18,7 @@ public class MesaRPG {
     
     public String titulo;
     public ArrayList<Jogador> jogadores = new ArrayList<>();
+    public ArrayList<Personagem> personagens = new ArrayList<>();
     public ArrayList<Criatura> currentNPCs = new ArrayList<>();
     public ArrayList<Criatura> NPCs = new ArrayList<>();
     public ArrayList<Raca> racas = new ArrayList<>();
@@ -33,6 +34,16 @@ public class MesaRPG {
     public void removeJogador(Jogador jogador){
         if(!jogadores.remove(jogador)){
             System.out.println("Warning: Jogador não existe na lista de jogadores");
+        }
+    }
+    
+    public void joinPersonagem(Personagem personagem){
+        personagens.add(personagem);
+    }
+    
+    public void removePersonagem(Personagem personagem){
+        if(!personagens.remove(personagem)){
+            System.out.println("Warning: Personagem não existe na lista de persongens");
         }
     }
 
