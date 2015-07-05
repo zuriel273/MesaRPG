@@ -198,7 +198,7 @@ public class Aplicacao {
                              sair = 1;
                          }                         
                          if(opcao < mesa.getAtributos().size()){
-                            atributos.add(mesa.getAtributos().get(i));
+                            atributos.add(mesa.getAtributos().get(i)); 
                          }
                     }   
                     // CONTINUAR
