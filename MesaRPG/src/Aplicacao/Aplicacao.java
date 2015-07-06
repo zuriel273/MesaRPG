@@ -37,7 +37,7 @@ public class Aplicacao {
         Personagem p = new Personagem("", null, null, null, 1, 1);
         boolean b;
              
-        mesa.setTitulo("SEM TITULO");
+        mesa.setTitulo("HERO KIDS");
        
         while (sair == 0){
         //Config Aplicação
@@ -51,7 +51,7 @@ public class Aplicacao {
             System.out.println("7 - VISUALIZAR HABILIDADES ADICIONADAS");            
             System.out.println("11 - SAIR ");
             System.out.println("------------------------------------------------------------------------------");
-            System.out.println("Digite a opção desejada: ");
+            System.out.print("Digite a opção desejada: ");
             entrada = obj.readLine();
             opcao = Integer.parseInt(entrada);
             switch(opcao){

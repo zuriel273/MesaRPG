@@ -3,17 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Arlindo/Documents/NetBeansProjects/MesaRPG/MesaRPG/src/mesa/Habilidade.java</file>
-            <file>file:/C:/Users/Arlindo/Documents/NetBeansProjects/MesaRPG/MesaRPG/src/mesa/Objeto.java</file>
-            <file>file:/C:/Users/Arlindo/Documents/NetBeansProjects/MesaRPG/MesaRPG/src/mesa/Item.java</file>
-            <file>file:/C:/Users/Arlindo/Documents/NetBeansProjects/MesaRPG/MesaRPG/test/mesa/CriaturaTest.java</file>
-            <file>file:/C:/Users/Arlindo/Documents/NetBeansProjects/MesaRPG/MesaRPG/src/mesa/Raca.java</file>
-            <file>file:/C:/Users/Arlindo/Documents/NetBeansProjects/MesaRPG/MesaRPG/src/mesa/Dado.java</file>
-            <file>file:/C:/Users/Arlindo/Documents/NetBeansProjects/MesaRPG/MesaRPG/src/Aplicacao/Aplicacao.java</file>
-            <file>file:/C:/Users/Arlindo/Documents/NetBeansProjects/MesaRPG/MesaRPG/src/mesa/TesteCommand.java</file>
-            <file>file:/C:/Users/Arlindo/Documents/NetBeansProjects/MesaRPG/MesaRPG/src/mesa/GrupoCriatura.java</file>
-            <file>file:/C:/Users/Arlindo/Documents/NetBeansProjects/MesaRPG/MesaRPG/src/mesa/MesaRPG.java</file>
-            <file>file:/C:/Users/Arlindo/Documents/NetBeansProjects/MesaRPG/MesaRPG/src/mesa/ItemDecorator.java</file>
+            <file>file:src/mesa/Habilidade.java</file>
+            <file>file:src/mesa/Objeto.java</file>
+            <file>file:src/mesa/Item.java</file>
+            <file>file:test/mesa/CriaturaTest.java</file>
+            <file>file:src/mesa/Raca.java</file>
+            <file>file:src/mesa/Dado.java</file>
+            <file>file:src/Aplicacao/Aplicacao.java</file>
+            <file>file:src/mesa/TesteCommand.java</file>
+            <file>file:src/mesa/GrupoCriatura.java</file>
+            <file>file:src/mesa/MesaRPG.java</file>
+            <file>file:src/mesa/ItemDecorator.java</file>
         </group>
     </open-files>
 </project-private>
