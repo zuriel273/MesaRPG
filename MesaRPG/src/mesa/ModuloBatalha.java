@@ -30,11 +30,6 @@ public abstract class ModuloBatalha {
    
     abstract void emBatalha(CriaturaIterator it);
     
-    /*
-    abstract boolean acao(Criatura craitura, TesteCommand test);
-    abstract boolean reacao(Criatura craitura, TesteCommand test);
-    */
-    
     abstract boolean encerraBatalha(boolean forced);
     
     /* Getters & Setters */
