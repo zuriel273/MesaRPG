@@ -14,6 +14,8 @@ import java.util.ArrayList;
 
 public class MesaRPG {
     
+    public static MesaRPG self;
+    
     public static final boolean DEBUG_MODE = true; 
     
     public String titulo;
@@ -26,7 +28,16 @@ public class MesaRPG {
     public ArrayList<Atributo> atributos = new ArrayList<>();
     public ArrayList<Item> itens = new ArrayList<>();
    
-            
+    
+    public static MesaRPG getInstace(){
+        if(self != null) return self;
+        else return null;
+    }
+    
+    public MesaRPG(){
+        self = this;
+    }
+    
     public void joinJogador(Jogador jogador){
         jogadores.add(jogador);
     }

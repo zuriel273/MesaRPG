@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package Aplicacao;
+package HeroKids;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -16,7 +16,7 @@ import mesa.*;
  *
  * @author Arlindo
  */
-public class Aplicacao {
+public class HeroKids {
 
     /**
      * @param args the command line arguments
@@ -402,6 +402,33 @@ public class Aplicacao {
                     break;
                 default:
                     System.out.println("A OPÇÃO NÃO EXISTE!"); 
+            }
+        
+        }
+        
+        while (sair == 0){
+        //Config Aplicação
+            System.out.println("Batalha do RPG " + mesa.getTitulo());
+            System.out.println("1 - INICIAR BATALHA ");
+            System.out.println("11 - FIM DE JOGO ");
+            System.out.println("------------------------------------------------------------------------------");
+            System.out.print("Digite a opção desejada: ");
+            entrada = obj.readLine();
+            opcao = Integer.parseInt(entrada);
+            switch(opcao){
+                case 1:
+                    HeroGrupo grupo = new HeroGrupo();
+                    grupo.adicionarCriatura(mesa.getCurrentGrounp());
+                    
+                    HeroModuloBatalha modulo = new HeroModuloBatalha(grupo);
+                    modulo.decorreBatalha();
+                    
+                    
+                case 11:
+                    sair = 1;
+                    break;
+                default:
+                    System.out.println("A OPÇÃO NÃO EXISTE!");
             }
         
         }

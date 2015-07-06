@@ -17,6 +17,7 @@ public class Criatura {
     private ArrayList<Atributo> atributos;
     private Raca raca;
     private int level, xp;
+    private boolean morte;
 
     public Criatura(ArrayList<Item> itens, ArrayList<Atributo> atributos, Raca raca, int level, int xp) {
         this.itens = itens;
@@ -73,8 +74,12 @@ public class Criatura {
         this.xp = xp;
     }
     
+    public void setMorte(boolean morte) {
+        this.morte = morte;
+    }
+    
     public boolean morto(){
-        return false;
+        return morte;
     }
 
     @Override

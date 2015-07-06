@@ -22,4 +22,6 @@ public interface CriaturaIterator {
     
     public int fimDeBatalha();
     public int turno();
+
+    public void forceFimBatalhar();
 }

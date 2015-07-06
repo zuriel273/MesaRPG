@@ -15,7 +15,7 @@ public abstract class ModuloBatalha {
     protected GrupoCriatura grupo;
     protected TesteCommand iniciativa;
     
-    final void decorreBatalha(){
+    public final void decorreBatalha(){
         if(iniciativa == null){
             System.out.println("iniciativa não pode ser nula");
             return;
@@ -25,14 +25,22 @@ public abstract class ModuloBatalha {
             emBatalha(it);
         }
         
-        encerraBatalha(false);
+        encerraBatalha(null, false);
     }
    
-    abstract void emBatalha(CriaturaIterator it);
+    public abstract void emBatalha(CriaturaIterator it);
     
-    abstract boolean encerraBatalha(boolean forced);
+    public abstract boolean encerraBatalha(CriaturaIterator it, boolean forced);
     
     /* Getters & Setters */
+    
+    public GrupoCriatura getGrupo() {
+        return grupo;
+    }
+
+    public void setGrupo(GrupoCriatura grupo) {
+        this.grupo = grupo;
+    }    
     
     final public void setIniciativa(TesteCommand teste){
         iniciativa = teste;

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Aplicacao;
+package HeroKids;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +15,7 @@ import mesa.*;
  */
 public class HeroGrupo implements GrupoCriatura{
     
-    List<Criatura> criaturas = new ArrayList<Criatura>();
+    private List<Criatura> criaturas = new ArrayList<Criatura>();
     
     @Override
     public CriaturaIterator ordenarGrupo(TesteCommand teste) {
@@ -53,6 +53,16 @@ public class HeroGrupo implements GrupoCriatura{
             return false;
         }
     }
+    
+    public boolean adicionarCriatura(List<Criatura> criaturas) {
+        try {
+            this.criaturas.addAll(criaturas);
+            return true;
+            
+        } catch (Exception e) {
+            return false;
+        }
+    }
 
     @Override
     public boolean removeCriatura(Criatura criatura) {
@@ -68,5 +78,25 @@ public class HeroGrupo implements GrupoCriatura{
     @Override
     public int numeroCriatura() {
         return criaturas.size();
+    }
+    
+    public ArrayList<Criatura> getAllNPCs(){
+        ArrayList<Criatura> npcs = new ArrayList<>();
+        
+        criaturas.stream().forEach((criatura) -> {
+            if(criatura instanceof NPC) npcs.add(criatura);
+        });
+        
+        return npcs;
+    }
+    
+    public ArrayList<Criatura> getAllPlayer(){
+        ArrayList<Criatura> players = new ArrayList<>();
+        
+        criaturas.stream().forEach((criatura) -> {
+            if(criatura instanceof Personagem) players.add(criatura);
+        });
+        
+        return players;
     }
 }

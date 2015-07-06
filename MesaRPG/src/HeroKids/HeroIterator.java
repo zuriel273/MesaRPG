@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Aplicacao;
+package HeroKids;
 
 import java.util.List;
 import mesa.Criatura;
@@ -19,6 +19,7 @@ public class HeroIterator implements CriaturaIterator{
     
     List<Criatura> criaturas;
     int turno, atual;
+    boolean encerra = false; 
     
     public HeroIterator(List<Criatura> criaturas){
         this.criaturas = criaturas;
@@ -51,6 +52,8 @@ public class HeroIterator implements CriaturaIterator{
 
     @Override
     public int fimDeBatalha() {
+        if(encerra) return PLAYER_WIN;
+        
         boolean inimigos = false, jogadores = false;
         
         for (Criatura criatura : criaturas) {
@@ -71,7 +74,11 @@ public class HeroIterator implements CriaturaIterator{
         
         return 0;
     }
-
+    
+    public void forceFimBatalhar(){
+        encerra = true;
+    }
+    
     @Override
     public int turno() {
         return turno;
