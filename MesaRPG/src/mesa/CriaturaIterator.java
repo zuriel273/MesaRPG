@@ -12,10 +12,14 @@ package mesa;
  */
 public interface CriaturaIterator {
     
+    public static final int ENEMYS_WIN = 2;    
+    public static final int PLAYER_WIN = 1;
+    public static final int DRAW_WIN = 3;
+
     public Criatura primeiro();
     public Criatura proximo();
-    public Criatura criaturaAtual();
+    public Criatura atual();
     
-    public boolean fimDeBatalha();
+    public int fimDeBatalha();
     public int turno();
 }

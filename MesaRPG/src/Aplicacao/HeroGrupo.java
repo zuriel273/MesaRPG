@@ -21,7 +21,6 @@ public class HeroGrupo implements GrupoCriatura{
     public CriaturaIterator ordenarGrupo(TesteCommand teste) {
         List<Criatura> criaturasOrder = new ArrayList<Criatura>();
         int[] iniciativa = new int[criaturas.size()];
-        
                 
         for(int i = 0; i < criaturas.size(); i++){
             iniciativa[i] = teste.testeAsInt(criaturas.get(i), null);
@@ -41,9 +40,7 @@ public class HeroGrupo implements GrupoCriatura{
             criaturasOrder.add(j, criaturas.get(i));
         }
         
-        criaturas = criaturasOrder;
-        
-        return null;
+        return new HeroIterator(criaturasOrder);
     }
 
     @Override
@@ -72,5 +69,4 @@ public class HeroGrupo implements GrupoCriatura{
     public int numeroCriatura() {
         return criaturas.size();
     }
-    
 }
