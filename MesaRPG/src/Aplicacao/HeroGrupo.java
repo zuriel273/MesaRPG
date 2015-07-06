@@ -6,7 +6,6 @@
 package Aplicacao;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 import mesa.*;
 
@@ -29,18 +28,22 @@ public class HeroGrupo implements GrupoCriatura{
             
             int j = 0;
             for(j = 0; j <= criaturasOrder.size(); j++){
+                if(iniciativa[j] < iniciativa[i]) 
+                    break;
                 
+                if(iniciativa[j] == iniciativa[i] &&
+                   (criaturasOrder.get(j) instanceof NPC) && 
+                   (criaturas.get(i) instanceof Personagem)
+                ) 
+                    break;
             }
-            criaturasOrder.add(j, 0);
+            
+            criaturasOrder.add(j, criaturas.get(i));
         }
         
-        for(int i = 0; i < criaturas.size(); i++)
-        criaturas.sort(new Comparator<Criatura>(){
-            @Override
-            public int compare(Criatura o1, Criatura o2) {
-            
-            }
-        });
+        criaturas = criaturasOrder;
+        
+        return null;
     }
 
     @Override
