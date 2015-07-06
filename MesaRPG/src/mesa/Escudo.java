@@ -10,9 +10,13 @@ package mesa;
  *
  * @author Arlindo
  */
-public class Objeto extends Item{
+public class Escudo extends Item{
     
-    public Objeto(Item it) {
+    public Escudo(String descricao, String nome, int ataque, int defesa, int magia) {
+        super(descricao, nome, ataque, defesa, magia);
+    }
+    
+    public Escudo(Item it) {
         super(it);
     }
     

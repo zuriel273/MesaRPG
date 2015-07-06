@@ -35,6 +35,10 @@ public class Aplicacao {
         ArrayList<Item> itens = new ArrayList<>();
         Raca r = new Raca("","" ,habilidade);
         Personagem p = new Personagem("", null, null, null, 1, 1);
+        Objeto it = new Objeto(null);
+        Escudo esc = new Escudo(null);
+        Espada esp = new Espada(null);
+        ChapeuMago mag = new ChapeuMago(null);
         boolean b;
              
         mesa.setTitulo("HERO KIDS");
@@ -158,7 +162,8 @@ public class Aplicacao {
             System.out.println("1 - ADICIONAR JOGADOR ");
             System.out.println("2 - ADICIONAR PERSONAGEM");
             System.out.println("3 - ADICIONAR NPC");
-                            
+            System.out.println("4 - ADICIONAR ITEM"); 
+            System.out.println("5 - MESCLAR ITEM");
             System.out.println("11 - SAIR ");
             System.out.println("------------------------------------------------------------------------------");
             System.out.println("Digite a opção desejada: ");
@@ -321,6 +326,75 @@ public class Aplicacao {
                         }
                     }                    
                     mesa.joinNPC(new NPC(b, itens, atributos, r, auxii, auxi));                                      
+                    sair = 0;
+                    break;
+                case 4:
+                    
+                    System.out.println("Digite o Nome do Item: ");
+                    nome = obj.readLine();
+                    System.out.println("Digite a Descrição do Item: ");
+                    descricao = obj.readLine();  
+                    System.out.println("Digite o Valor de Ataque: ");
+                    entrada = obj.readLine();
+                    opcao = Integer.parseInt(entrada);                    
+                    System.out.println("Digite o Valor de Defesa: ");
+                    entrada = obj.readLine();
+                    auxi = Integer.parseInt(entrada);
+                    System.out.println("Digite o Valor de Magia: ");
+                    entrada = obj.readLine();
+                    auxii = Integer.parseInt(entrada);
+                    System.out.println("Item de Ataque (Digite 1), Item de Defesa (Digite 2) ou Item de Magia (Digite 3): ");
+                    entrada = obj.readLine();
+                    auxiii = Integer.parseInt(entrada);                    
+                    
+                    if (auxiii == 1)
+                        mesa.getItens().add(new Espada(descricao, nome,opcao,auxi, auxii));
+                    else{
+                        if (auxiii == 1)
+                            mesa.getItens().add(new Escudo(descricao, nome,opcao,auxi, auxii));
+                        else
+                            mesa.getItens().add(new ChapeuMago(descricao, nome,opcao,auxi, auxii));
+                    }
+                    sair = 0;
+                    break;
+                case 5:
+                    
+                    while(sair == 0){
+                        System.out.println("-----------------------------------------------------------");
+                         System.out.println("SELECIONE OS ITEM QUE DESEJA MESCLAR:");
+                         System.out.println("-----------------------------------------------------------");
+                        int i = 0;
+                        int y = 0;
+                        System.out.println("ITEM 1");
+                        System.out.println("-----------------------------------------------------------");
+                        for(i = 0; i < mesa.getItens().size();i++){
+                             System.out.println( i + " - Nome:" + mesa.getItens().get(i).getNome() + " Ataque" + mesa.getItens().get(i).getAtaque()+ " Defesa" + mesa.getItens().get(i).getDefesa()+ " Magia" + mesa.getItens().get(i).getMagia());
+                        }                                                     
+                        System.out.println("-----------------------------------------------------------");                                              
+                        System.out.println("Digite o Item 1 desejado:");
+                        entrada = obj.readLine();
+                        opcao = Integer.parseInt(entrada);                         
+                                              
+                        if(opcao < mesa.getItens().size()){
+                           it = (Objeto) mesa.getItens().get(opcao); 
+                        }                        
+                        
+                        System.out.println("ITEM 2");
+                        System.out.println("-----------------------------------------------------------");
+                        for(i = 0; i < mesa.getItens().size();i++){
+                             System.out.println( i + " - Nome:" + mesa.getItens().get(i).getNome() + " Ataque" + mesa.getItens().get(i).getAtaque()+ " Defesa" + mesa.getItens().get(i).getDefesa()+ " Magia" + mesa.getItens().get(i).getMagia());
+                        }                                                     
+                        System.out.println("-----------------------------------------------------------");                                              
+                        System.out.println("Digite o Item 2 desejado:");
+                        entrada = obj.readLine();
+                        opcao = Integer.parseInt(entrada);                         
+                                              
+                        if(opcao < mesa.getItens().size()){
+                           it = new Objeto(mesa.getItens().get(opcao)); 
+                        }
+                                         
+                        mesa.getItens().add(new Objeto(it));
+                    }
                     sair = 0;
                     break;
                 case 11:

@@ -16,7 +16,13 @@ public abstract class ItemDecorator extends Item{
     public ItemDecorator(Item item, String descricao, String nome, int ataque, int defesa, int magia) {
         super(descricao, nome, ataque, defesa, magia);
         this.item = item;
-    } 
+    }
+
+    public ItemDecorator(Item it) {
+        super(it);       
+    }
+    
+    
 
     @Override
     public String getNome() {

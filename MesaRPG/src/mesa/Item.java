@@ -21,6 +21,14 @@ public abstract class Item {
         this.defesa = defesa;
         this.magia = magia;
     }
+    
+    public Item(Item it){
+        this.descricao = it.getDescricao();
+        this.nome = it.getNome();
+        this.ataque = it.getAtaque();
+        this.magia = it.getMagia();
+        this.defesa = it.getDefesa();
+    }
 
     public String getDescricao() {
         return descricao;
