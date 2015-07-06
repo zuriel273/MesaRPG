@@ -29,6 +29,8 @@ public abstract class Item {
         this.magia = it.getMagia();
         this.defesa = it.getDefesa();
     }
+    
+    public Item(){}
 
     public String getDescricao() {
         return descricao;

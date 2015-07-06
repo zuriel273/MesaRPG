@@ -16,6 +16,7 @@ import mesa.GrupoCriatura;
 import mesa.ModuloBatalha;
 import mesa.NPC;
 import mesa.Personagem;
+import mesa.TesteCommand;
 
 /**
  *
@@ -24,7 +25,8 @@ import mesa.Personagem;
 
 public class HeroModuloBatalha extends ModuloBatalha{
 
-    public HeroModuloBatalha(GrupoCriatura grupo) {
+    public HeroModuloBatalha(GrupoCriatura grupo, TesteCommand iniciativa) {
+        setIniciativa(iniciativa);
         this.setGrupo(grupo);
     }
 

@@ -35,10 +35,10 @@ public class HeroKids {
         ArrayList<Item> itens = new ArrayList<>();
         Raca r = new Raca("","" ,habilidade);
         Personagem p = new Personagem("", null, null, null, 1, 1);
-        Objeto it = new Objeto(null);
-        Escudo esc = new Escudo(null);
-        Espada esp = new Espada(null);
-        ChapeuMago mag = new ChapeuMago(null);
+        //Objeto it = new Objeto(null);
+        //Escudo esc = new Escudo(null);
+        //Espada esp = new Espada(null);
+        //ChapeuMago mag = new ChapeuMago(null);
         boolean b;
              
         mesa.setTitulo("HERO KIDS");
@@ -162,8 +162,8 @@ public class HeroKids {
             System.out.println("1 - ADICIONAR JOGADOR ");
             System.out.println("2 - ADICIONAR PERSONAGEM");
             System.out.println("3 - ADICIONAR NPC");
-            System.out.println("4 - ADICIONAR ITEM"); 
-            System.out.println("5 - MESCLAR ITEM");
+           // System.out.println("4 - ADICIONAR ITEM"); 
+           // System.out.println("5 - MESCLAR ITEM");
             System.out.println("11 - SAIR ");
             System.out.println("------------------------------------------------------------------------------");
             System.out.println("Digite a opção desejada: ");
@@ -356,7 +356,7 @@ public class HeroKids {
                             mesa.getItens().add(new ChapeuMago(descricao, nome,opcao,auxi, auxii));
                     }
                     sair = 0;
-                    break;
+                    break;/*
                 case 5:
                     
                     while(sair == 0){
@@ -396,7 +396,7 @@ public class HeroKids {
                         mesa.getItens().add(new Objeto(it));
                     }
                     sair = 0;
-                    break;
+                    break;*/
                 case 11:
                     sair = 1;
                     break;
@@ -405,7 +405,7 @@ public class HeroKids {
             }
         
         }
-        
+        sair = 0;
         while (sair == 0){
         //Config Aplicação
             System.out.println("Batalha do RPG " + mesa.getTitulo());
@@ -420,7 +420,8 @@ public class HeroKids {
                     HeroGrupo grupo = new HeroGrupo();
                     grupo.adicionarCriatura(mesa.getCurrentGrounp());
                     
-                    HeroModuloBatalha modulo = new HeroModuloBatalha(grupo);
+                    HeroModuloBatalha modulo = new HeroModuloBatalha(grupo, new TesteIniciativa());
+                    
                     modulo.decorreBatalha();
                     
                     
